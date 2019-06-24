@@ -1,0 +1,38 @@
+= collection of links
+
+== BDD
+
+* http://gist.asciidoctor.org/?github-rmpestano/cukedoctor/README.adoc&numbered&doctype=book&no-header-footer[]
+* https://github.com/rmpestano/cukedoctor[]
+
+
+== Asciidoctor
+
+* https://github.com/asciidoctor/asciidoctorj-screenshot[]
+* http://svn.apache.org/repos/asf/poi/trunk/src/examples/src/org/apache/poi/xslf/usermodel/PPTX2SVG.txt[]
+* https://poi.apache.org/components/slideshow/xslf-cookbook.html#PPTX2PNG[]
+* https://github.com/asciidoctor/asciidoctor-confluence[]
+* https://real-world-plantuml.com/?type=activity[]
+
+== Testing
+
+* https://github.com/societe-generale/arch-unit-maven-plugin[]
+* https://github.com/TNG/ArchUnit-Examples[]
+* https://www.archunit.org/userguide/html/000_Index.html[]
+
+== Metrics & Quality
+
+* https://structure101.com/resources/#resources=0[]
+
+== Evaluate it
+
+* https://www.flowable.org/downloads.html[] 
+
+== DDD
+
+* https://github.com/michael-simons/simple-meetup/blob/master/src/articles/ddd-und-tdd-mit-spring-boot-2_de.adoc#event-entity[]
+* https://www.youtube.com/watch?v=sVLWdtksMOI[]
+
+== REST Services
+
+* https://www.youtube.com/watch?v=G5HXjfQDa2k&feature=youtu.be[]
