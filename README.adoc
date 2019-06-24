@@ -36,3 +36,7 @@
 == REST Services
 
 * https://www.youtube.com/watch?v=G5HXjfQDa2k&feature=youtu.be[]
+
+== CircleCI
+
+* https://circleci.com/blog/triggering-trusted-ci-jobs-on-untrusted-forks/[]
