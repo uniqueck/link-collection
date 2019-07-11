@@ -39,4 +39,5 @@
 
 == CircleCI
 
+* https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/[]
 * https://circleci.com/blog/triggering-trusted-ci-jobs-on-untrusted-forks/[]
