@@ -26,7 +26,8 @@
 
 == Evaluate it
 
-* https://www.flowable.org/downloads.html[] 
+* https://www.flowable.org/downloads.html[]
+* https://www.youtube.com/watch?v=M4Aa45Gpc4w[Spring Statemachine] 
 
 == DDD
 
@@ -39,4 +40,5 @@
 
 == CircleCI
 
+* https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/[]
 * https://circleci.com/blog/triggering-trusted-ci-jobs-on-untrusted-forks/[]
