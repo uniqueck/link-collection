@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.ckr.github</groupId>
+    <artifactId>link-collection</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.0.0</asciidoctorj.version>
+        <asciidoctorj.diagram.version>1.5.18</asciidoctorj.diagram.version>
+        <java.version>1.8</java.version>
+        <adoc.skip>false</adoc.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jruby.version>9.2.7.0</jruby.version>
+    </properties>
+
+    <build>
+        <defaultGoal>clean process-resources</defaultGoal>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>${asciidoctor.maven.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj.diagram.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>generate-html5</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
+                            <backend>html5</backend>
+                            <sourceHighlighter>rouge</sourceHighlighter>
+                            <outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
+                            <outputFile>index.html</outputFile>
+                            <sourceDocumentName>index.adoc</sourceDocumentName>
+                            <attributes>
+                                <idseparator>-</idseparator>
+                                <idprefix />
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: mvn
+      - persist_to_workspace:
+          root: target
+          paths: generated-docs
+  docs-deploy:
+      docker:
+        - image: node:8.10.0
+      steps:
+        - checkout
+        - attach_workspace:
+            at: ./target
+        - run:
+            name: "show content of directory"
+            command: ls target/generated-docs
+        - run:
+            name: "Disable jekyll builds"
+            command: touch target/generated-docs/.nojekyll
+        - run:
+            name: "show content of directory"
+            command: ls target/generated-docs
+        - run:
+            name: "Install and configure dependencies"
+            command: |
+              npm install -g --silent gh-pages@2.0.1
+              git config user.email "ci-build@constantinidis.de"
+              git config user.name "ci-build"
+        - add_ssh_keys:
+            fingerprints:
+              - "fe:93:d4:59:60:c3:e5:3d:39:ff:95:2f:ae:fa:96:04"
+        - run:
+            name: "Deploy docs to gh-pages branch"
+            command: gh-pages --dotfiles --message "[skip ci] Updates" --dist target/generated-docs
+workflows:
+  version: 2
+  build-n-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - docs-deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
