@@ -1,6 +1,7 @@
 :doctype: book
 :toc:
 :icons: font
+:sectanchors:
 = useful link & resources
 Constantin Krüger <github@constantin-krueger.com>
 
